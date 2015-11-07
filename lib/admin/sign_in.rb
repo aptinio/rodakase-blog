@@ -6,7 +6,8 @@ module Admin
 
     def call(input, session)
       user = authenticate.(input)
-      session[:user_id] = user
+      session[:user_id] = user.id if user
+      user
     end
   end
 end

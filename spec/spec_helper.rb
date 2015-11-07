@@ -16,8 +16,12 @@ Dir[SPEC_ROOT.join('shared/*.rb').to_s].each { |f| require f }
 
 require SPEC_ROOT.join('../core/boot').realpath.to_s
 
-require 'database_cleaner'
+require 'capybara/rspec'
 
+Capybara.app = Blog::Application.app
+Capybara.app_host = 'http://localhost'
+
+require 'database_cleaner'
 DatabaseCleaner[:sequel, connection: Helpers.db_conn].strategy = :transaction
 
 RSpec.configure do |config|
@@ -29,6 +33,7 @@ RSpec.configure do |config|
   end
 
   config.include Rack::Test::Methods, type: :request
+  config.include Rack::Test::Methods, Capybara::DSL, type: :feature
   config.include Helpers
 
   config.around do |e|

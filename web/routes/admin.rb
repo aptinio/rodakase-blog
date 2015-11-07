@@ -11,28 +11,32 @@ module Blog
     end
 
     route('admin') do |r|
-      r.resolve('admin.authorize') do |authorize|
-        authorize.(session) do |user|
-          if user
-            set_current_user!(user)
-          else
-            r.halt(401)
+      r.resolve(:page) do |page|
+        r.on('sign_in') do
+          r.is(to: 'ui.admin.sign_in', call_with: [page])
+        end
+
+        r.on('sessions') do
+          r.post do
+            r.resolve('admin.sign_in') do |sign_in|
+              if sign_in.(r.params, session)
+                r.redirect('/admin')
+              else
+                r.redirect('/admin/sign_in')
+              end
+            end
           end
         end
 
-        r.get do
-          "hello #{current_user.name}"
-        end
-      end
-    end
+        r.resolve('admin.authorize') do |authorize|
+          authorize.(session) do |user|
+            if user
+              set_current_user!(user)
+            else
+              r.redirect('/admin/sign_in')
+            end
 
-    route('admin/sessions') do |r|
-      r.post do
-        r.resolve('admin.sign_in') do |sign_in|
-          if sign_in.(r.params, session)
-            r.redirect('/admin')
-          else
-            r.halt(401)
+            r.is(to: 'ui.admin.index', call_with: [page])
           end
         end
       end

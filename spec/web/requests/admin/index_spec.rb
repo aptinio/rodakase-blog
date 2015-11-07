@@ -1,9 +1,10 @@
 RSpec.describe '/admin', type: :request do
   context 'when not authorized' do
-    it 'return 401' do
+    it 'returns to sign in' do
       get '/admin'
 
-      expect(last_response).to be_unauthorized
+      expect(last_response).to be_redirect
+      expect(last_response.location).to eql('/admin/sign_in')
     end
   end
 
@@ -15,7 +16,7 @@ RSpec.describe '/admin', type: :request do
 
       expect(last_response).to be_ok
 
-      expect(last_response.body).to eql("hello Jane")
+      expect(last_response.body).to include("Blog - Admin Panel")
     end
   end
 end

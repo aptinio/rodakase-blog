@@ -6,7 +6,7 @@ module Blog
     setting :container, Container
 
     use Rack::Session::Cookie, key: 'rack.session',
-      domain: 'rodakase.blog',
+      domain: 'localhost',
       path: '/',
       expire_after: 2592000,
       secret: 'TODO'

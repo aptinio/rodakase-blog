@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rodakase', github: 'solnic/rodakase', branch: 'master'
 
+gem 'bcrypt-ruby'
 gem 'pry'
 gem 'pg'
 gem 'dry-data'

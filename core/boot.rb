@@ -11,4 +11,9 @@ Blog::Container.configure do |container|
   container.register(:page, Blog::Page.new(container.config))
 end
 
+# trigger rom boot
+#
+# TODO: we need an explicit interface for that
+Blog::Container['persistence.rom']
+
 Blog::Container.finalize!

@@ -3,6 +3,8 @@ ROM::SQL.migration do
     create_table :users do
       primary_key :id
       column :name, String, null: false
+      column :email, String, null: false
+      column :encrypted_password, String, null: false
     end
   end
 end

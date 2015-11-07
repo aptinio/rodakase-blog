@@ -1,12 +1,10 @@
-require 'blog/import'
+require 'blog/view'
 
 module Ui
   module Users
-    class Hello
-      include Blog::Import(:renderer)
-
-      def call
-        renderer.call('users/hello.slim')
+    class Hello < Blog::View
+      configure do |config|
+        config.template = 'users/hello'
       end
     end
   end

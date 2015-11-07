@@ -5,8 +5,8 @@ module Persistence
     class Users < ROM::Repository
       relations :users
 
-      def all
-        users.as(Entities::User).to_a
+      def [](id)
+        users.where(id: id).as(Entities::User).one
       end
 
       def by_email(email)

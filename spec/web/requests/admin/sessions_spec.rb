@@ -1,10 +1,6 @@
 RSpec.describe '/admin/sessions', type: :request do
   describe 'POST' do
-    let!(:user) do
-      container['admin.create_user'].(
-        name: 'Jane', email: 'jane@doe.org', password: 'foo'
-      )
-    end
+    include_context 'user'
 
     it 'signs in the user when password is valid' do
       post '/admin/sessions', user: { email: user.email, password: 'foo' }

@@ -8,6 +8,10 @@ module Persistence
       def all
         users.as(Entities::User).to_a
       end
+
+      def by_email(email)
+        users.where(email: email).as(Entities::User).first
+      end
     end
   end
 end

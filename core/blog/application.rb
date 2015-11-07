@@ -5,6 +5,12 @@ module Blog
   class Application < Rodakase::Application
     setting :container, Container
 
+    use Rack::Session::Cookie, key: 'rack.session',
+      domain: 'rodakase.blog',
+      path: '/',
+      expire_after: 2592000,
+      secret: 'TODO'
+
     route do |r|
       r.multi_route
     end

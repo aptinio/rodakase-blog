@@ -10,9 +10,8 @@ module Ui
         config.template = 'admin/posts'
       end
 
-      def call(page, locals = {})
-        # TODO: add support for building locals hash so we don't have to override call
-        super(page, locals.merge(posts: posts.index))
+      def locals
+        { posts: posts.index }
       end
     end
   end

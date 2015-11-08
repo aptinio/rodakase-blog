@@ -1,4 +1,4 @@
-RSpec.feature 'Signin into admin panel', type: :feature do
+RSpec.feature 'Signing in into admin panel', type: :feature do
   include_context 'user'
 
   scenario do

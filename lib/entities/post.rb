@@ -9,5 +9,14 @@ module Entities
     attribute :title, 'string'
     attribute :body, 'string'
     attribute :user_id, 'int'
+
+    # TODO: make view objects work with anything that responds to `[]`
+    def key?(name)
+      instance_variables.include?(:"@#{name}")
+    end
+
+    def [](name)
+      public_send(name)
+    end
   end
 end

@@ -1,0 +1,12 @@
+h1 New Post
+
+form action="/admin/posts" method="post"
+  fieldset
+    p
+      label for="post-title" Title
+      input type="text" name="post[title]" id="post-title"
+    p
+      label for="post-body" Body
+      textarea name="post[body]" id="post-body"
+  p
+    input type="submit" value="Submit"

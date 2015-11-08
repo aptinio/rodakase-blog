@@ -22,7 +22,7 @@ Capybara.app = Blog::Application.app
 Capybara.app_host = 'http://localhost'
 
 require 'database_cleaner'
-DatabaseCleaner[:sequel, connection: Helpers.db_conn].strategy = :transaction
+DatabaseCleaner[:sequel, connection: Helpers.db_conn].strategy = :truncation
 
 RSpec.configure do |config|
   config.disable_monkey_patching!

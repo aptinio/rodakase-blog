@@ -1,3 +1,8 @@
-tr id="post_#{post.id}"
-  td = post.id
-  td = post.title
+tr id="post-#{post.id}"
+  td
+    = post.id
+  td
+    = post.title
+  td
+    a href="/admin/posts/#{post.id}/edit" Edit
+

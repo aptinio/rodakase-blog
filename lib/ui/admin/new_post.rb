@@ -3,15 +3,11 @@ require 'blog/view'
 
 module Ui
   module Admin
-    class Index < Blog::View::Admin
+    class NewPost < Blog::View::Admin
       include Blog::Import('persistence.repositories.posts')
 
       configure do |config|
-        config.template = 'admin/posts'
-      end
-
-      def locals(options)
-        { posts: posts.index }
+        config.template = 'admin/posts/new'
       end
     end
   end

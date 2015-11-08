@@ -13,7 +13,8 @@ require 'rom/sql/rake_task'
 
 namespace :db do
   task :setup do
-    Blog::Container.configure { |c| c }
+    env = ENV.fetch('RACK_ENV', :development).to_sym
+    Blog::Container.configure(env) { |c| c }
     Blog::Container['persistence.setup']
   end
 end

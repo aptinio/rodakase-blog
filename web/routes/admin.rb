@@ -1,6 +1,6 @@
 module Blog
   class Application < Rodakase::Application
-    plugin :halt
+    plugin :halt, :symbol_matchers
 
     def current_user
       env['blog.current_user']
@@ -34,6 +34,32 @@ module Blog
               set_current_user!(user)
             else
               r.redirect('/admin/sign_in')
+            end
+
+            r.on('posts') do
+              r.on('new') do
+                r.is(to: 'ui.admin.new_post', call_with: [page])
+              end
+
+              r.on(:id) do |id|
+                r.post do
+                  r.resolve('admin.update_post') do |update_post|
+                    update_post.(id, r[:post])
+                    r.redirect('/admin')
+                  end
+                end
+
+                r.on('edit') do
+                  r.is(to: 'ui.admin.edit_post', call_with: [page, id: id])
+                end
+              end
+
+              r.post do
+                r.resolve('admin.create_post') do |create_post|
+                  create_post.(r[:post], current_user)
+                  r.redirect('/admin')
+                end
+              end
             end
 
             r.is(to: 'ui.admin.index', call_with: [page])

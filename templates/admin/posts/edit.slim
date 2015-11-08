@@ -1,0 +1,13 @@
+h1 Edit Post
+
+form action="/admin/posts/#{post.id}" method="post"
+  fieldset
+    p
+      label for="post-title" Title
+      input type="text" name="post[title]" id="post-title" value=post.title
+    p
+      label for="post-body" Body
+      textarea name="post[body]" id="post-body"
+        == post.body
+  p
+    input type="submit" value="Submit"

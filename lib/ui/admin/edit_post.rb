@@ -3,15 +3,15 @@ require 'blog/view'
 
 module Ui
   module Admin
-    class Index < Blog::View::Admin
+    class EditPost < Blog::View::Admin
       include Blog::Import('persistence.repositories.posts')
 
       configure do |config|
-        config.template = 'admin/posts'
+        config.template = 'admin/posts/edit'
       end
 
-      def locals(options)
-        { posts: posts.index }
+      def locals(params)
+        { post: posts[params[:id]] }
       end
     end
   end

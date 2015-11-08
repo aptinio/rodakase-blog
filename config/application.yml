@@ -1,4 +1,4 @@
 development:
-  DATABASE_URL: 'postgres://localhost/rodakase_blog'
+  DATABASE_URL: 'postgres://localhost/rodakase_blog_dev'
 test:
-  DATABASE_URL: 'postgres://localhost/rodakase_blog'
+  DATABASE_URL: 'postgres://localhost/rodakase_blog_test'

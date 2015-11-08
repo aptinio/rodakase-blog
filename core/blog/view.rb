@@ -1,8 +1,9 @@
 require 'rodakase/view'
+require 'blog/container'
 
 module Blog
   class View < Rodakase::View::Layout
-    setting :renderer, -> engine { Blog::Container[:renderer].(engine) }
+    setting :root, Container.root.join('templates')
     setting :engine, :slim
     setting :name, 'app'
 

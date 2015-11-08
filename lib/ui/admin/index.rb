@@ -4,7 +4,7 @@ module Ui
   module Admin
     class Index < Blog::View::Admin
       configure do |config|
-        config.template = 'admin/index'
+        config.template = 'admin/posts'
       end
 
       def call(page, locals = {})

@@ -67,7 +67,7 @@ GIT
 
 GIT
   remote: git://github.com/solnic/rodakase.git
-  revision: b1ad87a7070d39eac7c4a9ea92a1a384af9733d8
+  revision: 5d6aea48590990394acc71b8d68bfdfcfa70675d
   branch: master
   specs:
     rodakase (0.0.1)

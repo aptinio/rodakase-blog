@@ -22,7 +22,7 @@ Blog::Container.namespace('persistence') do |container|
     end
   end
 
-  container.auto_load!('lib/persistence/repositories') do |repo_class|
+  container.auto_register!('lib/persistence/repositories') do |repo_class|
     -> { Inflecto.constantize(repo_class).new(container['persistence.rom']) }
   end
 

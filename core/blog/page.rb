@@ -3,10 +3,5 @@ module Blog
   #
   # Methods available in this object will be available in the main layout
   class Page
-    attr_reader :config
-
-    def initialize(config)
-      @config = config
-    end
   end
 end

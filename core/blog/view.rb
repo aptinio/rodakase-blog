@@ -1,6 +1,6 @@
-require 'rodakase/view'
+require_relative 'container'
 
-require 'blog/container'
+require 'rodakase/view'
 require 'blog/page'
 
 module Blog

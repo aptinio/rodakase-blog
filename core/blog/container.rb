@@ -4,6 +4,8 @@ module Blog
   class Container < Rodakase::Container
     setting :auto_register, 'lib'
 
-    load_paths!('lib')
+    configure do
+      load_paths!('lib', 'core')
+    end
   end
 end

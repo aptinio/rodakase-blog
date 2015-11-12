@@ -1,3 +1,4 @@
+require 'db_helper'
 require 'admin/create_post'
 
 RSpec.describe Admin::CreatePost do

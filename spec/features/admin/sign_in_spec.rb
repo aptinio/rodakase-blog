@@ -1,3 +1,5 @@
+require 'app_helper'
+
 RSpec.feature 'Signing in into admin panel', type: :feature do
   include_context 'user'
 

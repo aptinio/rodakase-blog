@@ -1,3 +1,5 @@
+require 'app_helper'
+
 RSpec.feature 'Browsing admin post index' do
   include_context 'signed in user'
   include_context 'posts'

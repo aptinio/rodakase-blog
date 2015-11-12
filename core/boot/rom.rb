@@ -23,11 +23,8 @@ Blog::Container.namespace('persistence') do |container|
   end
 
   container.auto_register!('lib/persistence/repositories') do |repo_class|
-    -> { Inflecto.constantize(repo_class).new(container['persistence.rom']) }
+    -> { container.const(repo_class).new(container['persistence.rom']) }
   end
 
-  # trigger rom boot
-  #
-  # TODO: we need an explicit interface for that
-  container['persistence.rom']
+  require container.root.join('core/container/persistence.rb')
 end

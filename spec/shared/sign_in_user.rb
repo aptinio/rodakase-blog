@@ -1,4 +1,4 @@
-shared_context 'signed in user' do
+RSpec.shared_context 'signed in user' do
   include_context 'user'
 
   background do

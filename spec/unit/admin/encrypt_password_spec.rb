@@ -1,3 +1,5 @@
+require 'admin/encrypt_password'
+
 RSpec.describe Admin::EncryptPassword do
   subject(:encrypt_password) { Admin::EncryptPassword.new }
 

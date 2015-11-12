@@ -1,4 +1,6 @@
-shared_context 'user' do
+Blog::Container.load_component('admin.create_user')
+
+RSpec.shared_context 'user' do
   let!(:user) do
     container['admin.create_user'].(
       name: 'Jane', email: 'jane@doe.org', password: 'foo'
@@ -6,7 +8,7 @@ shared_context 'user' do
   end
 end
 
-shared_context 'authorized requests' do
+RSpec.shared_context 'authorized requests' do
   include_context 'user'
 
   def get(path, params = {}, opts = {})

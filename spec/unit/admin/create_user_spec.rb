@@ -1,5 +1,5 @@
+require 'db_helper'
 require 'admin/create_user'
-require 'admin/encrypt_password'
 
 RSpec.describe Admin::CreateUser do
   subject(:create_user) { Admin::CreateUser.new(encrypt_password) }

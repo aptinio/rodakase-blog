@@ -5,6 +5,10 @@ module Persistence
     class Posts < ROM::Repository
       relations :posts
 
+      def initialize(rom)
+        super
+      end
+
       def [](id)
         posts.where(id: id).as(Entities::Post).one
       end

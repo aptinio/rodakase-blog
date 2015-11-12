@@ -1,3 +1,5 @@
+require 'boot/rom'
+
 module Helpers
   module_function
 

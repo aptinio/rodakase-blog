@@ -14,17 +14,16 @@ Blog::Container.namespace('persistence') do |container|
       container['persistence.setup']
 
       %w(relations commands).each do |type|
-        Dir[container.root.join("lib/persistence/#{type}/**/*.rb")]
-          .each(&method(:require))
+        container.require("lib/persistence/#{type}/**/*.rb")
       end
 
       ROM.finalize.container
     end
   end
 
-  container.auto_register!('lib/persistence/repositories') do |repo_class|
-    -> { container.const(repo_class).new(container['persistence.rom']) }
+  container.auto_register!('lib/persistence/repositories') do |repo|
+    -> { repo.new(container['persistence.rom']) }
   end
 
-  require container.root.join('core/container/persistence.rb')
+  container.require('core/container/persistence')
 end

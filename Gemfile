@@ -4,20 +4,19 @@ gem 'rodakase', github: 'solnic/rodakase', branch: 'master'
 
 gem 'bcrypt-ruby'
 gem 'pry'
-gem 'pg'
 gem 'dry-data'
 gem 'slim'
-gem 'equalizer'
-gem 'transproc', github: 'solnic/transproc', branch: 'master'
-gem 'dry-auto_inject', github: 'dryrb/dry-auto_inject', branch: 'master'
-gem 'dry-equalizer', github: 'dryrb/dry-equalizer', branch: 'master'
-gem 'dry-container', github: 'dryrb/dry-container', branch: 'master'
-gem 'rom', github: 'rom-rb/rom', branch: 'master'
-gem 'rom-repository', github: 'rom-rb/rom-repository', branch: 'master'
-gem 'rom-sql', github: 'rom-rb/rom-sql', branch: 'master'
-gem 'rom-support', github: 'rom-rb/rom-support', branch: 'master'
-gem 'rom-mapper', github: 'rom-rb/rom-mapper', branch: 'master'
-gem 'rom-model', github: 'rom-rb/rom-model', branch: 'master'
+
+group :rom do
+  gem 'pg'
+  gem 'transproc', github: 'solnic/transproc', branch: 'master'
+  gem 'rom', github: 'rom-rb/rom', branch: 'master'
+  gem 'rom-repository', github: 'rom-rb/rom-repository', branch: 'master'
+  gem 'rom-sql', github: 'rom-rb/rom-sql', branch: 'master'
+  gem 'rom-support', github: 'rom-rb/rom-support', branch: 'master'
+  gem 'rom-mapper', github: 'rom-rb/rom-mapper', branch: 'master'
+  gem 'rom-model', github: 'rom-rb/rom-model', branch: 'master'
+end
 
 group :test do
   gem 'byebug'

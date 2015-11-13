@@ -7,7 +7,7 @@ module Blog
   Container.register(:page, Page.new(Container.config))
 
   class View < Rodakase::View::Layout
-    setting :root, Container.root.join('templates')
+    setting :root, Container.root.join('web/templates')
     setting :scope, Container[:page]
     setting :engine, :slim
     setting :name, 'app'

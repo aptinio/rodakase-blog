@@ -3,7 +3,10 @@ require_relative 'container'
 
 module Blog
   class Application < Rodakase::Application
-    setting :container, Container
+    configure do |config|
+      config.routes = 'web/routes'.freeze
+      config.container = Container
+    end
 
     use Rack::Session::Cookie, key: 'rack.session',
       domain: 'localhost',

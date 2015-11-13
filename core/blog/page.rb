@@ -7,7 +7,7 @@ module Blog
       attr_reader :root
 
       def initialize(root)
-        @root = root.join('assets')
+        @root = root.join('web/assets')
       end
 
       def stylesheets

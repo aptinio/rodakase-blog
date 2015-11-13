@@ -8,18 +8,6 @@ GIT
       rom-support (~> 1.0.0.beta1)
 
 GIT
-  remote: git://github.com/rom-rb/rom-model.git
-  revision: e4ecd669e1c611d6b5413ba35eef3c35c0e445ad
-  branch: master
-  specs:
-    rom-model (0.2.0.beta1)
-      activemodel (>= 3.0, < 5.0)
-      charlatan (~> 0.1)
-      i18n
-      rom-support (~> 1.0.0.beta1)
-      virtus (~> 1.0, >= 1.0.5)
-
-GIT
   remote: git://github.com/rom-rb/rom-repository.git
   revision: 306bcc46dbd07e1332bc7236372f81bab3f1dfa5
   branch: master
@@ -60,7 +48,7 @@ GIT
 
 GIT
   remote: git://github.com/solnic/rodakase.git
-  revision: 0ee740fb5a079698dade293814a0004cfb130873
+  revision: 4980cf0645baa971e0a1e36cae163b7f9da4a5f7
   branch: master
   specs:
     rodakase (0.0.1)
@@ -83,15 +71,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     abstract_type (0.0.7)
-    activemodel (4.2.4)
-      activesupport (= 4.2.4)
-      builder (~> 3.1)
-    activesupport (4.2.4)
-      i18n (~> 0.7)
-      json (~> 1.7, >= 1.7.7)
-      minitest (~> 5.1)
-      thread_safe (~> 0.3, >= 0.3.4)
-      tzinfo (~> 1.1)
     adamantium (0.2.0)
       ice_nine (~> 0.11.0)
       memoizable (~> 0.4.0)
@@ -99,14 +78,9 @@ GEM
       abstract_type (~> 0.0.7)
       adamantium (~> 0.2)
       equalizer (~> 0.0.11)
-    axiom-types (0.1.1)
-      descendants_tracker (~> 0.0.4)
-      ice_nine (~> 0.11.0)
-      thread_safe (~> 0.3, >= 0.3.1)
     bcrypt (3.1.10)
     bcrypt-ruby (3.1.5)
       bcrypt (>= 3.1.3)
-    builder (3.2.2)
     byebug (8.2.0)
     capybara (2.5.0)
       mime-types (>= 1.16)
@@ -114,13 +88,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    charlatan (0.1.0)
     coderay (1.1.0)
-    coercible (1.0.0)
-      descendants_tracker (~> 0.0.1)
     database_cleaner (1.5.1)
-    descendants_tracker (0.0.4)
-      thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.2.5)
     dry-auto_inject (0.1.0)
     dry-configurable (0.1.2)
@@ -135,17 +104,14 @@ GEM
     dry-equalizer (0.1.0)
     dry-pipeline (0.0.1)
     equalizer (0.0.11)
-    i18n (0.7.0)
     ice_nine (0.11.1)
     inflecto (0.0.2)
-    json (1.8.3)
     kleisli (0.2.6)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
     method_source (0.8.2)
     mime-types (2.6.2)
     mini_portile (0.6.2)
-    minitest (5.8.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.3)
@@ -183,13 +149,6 @@ GEM
       dry-pipeline
       kleisli
       wisper
-    tzinfo (1.2.2)
-      thread_safe (~> 0.1)
-    virtus (1.0.5)
-      axiom-types (~> 0.1)
-      coercible (~> 1.0)
-      descendants_tracker (~> 0.0, >= 0.0.3)
-      equalizer (~> 0.0, >= 0.0.9)
     wisper (1.6.1)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -209,7 +168,6 @@ DEPENDENCIES
   rodakase!
   rom!
   rom-mapper!
-  rom-model!
   rom-repository!
   rom-sql!
   rom-support!

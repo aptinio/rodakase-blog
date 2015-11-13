@@ -15,7 +15,6 @@ group :rom do
   gem 'rom-sql', github: 'rom-rb/rom-sql', branch: 'master'
   gem 'rom-support', github: 'rom-rb/rom-support', branch: 'master'
   gem 'rom-mapper', github: 'rom-rb/rom-mapper', branch: 'master'
-  gem 'rom-model', github: 'rom-rb/rom-model', branch: 'master'
 end
 
 group :test do

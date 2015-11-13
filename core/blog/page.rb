@@ -3,5 +3,26 @@ module Blog
   #
   # Methods available in this object will be available in the main layout
   class Page
+    class Assets
+      attr_reader :root
+
+      def initialize(root)
+        @root = root.join('assets')
+      end
+
+      def stylesheets
+        Dir[root.join('css/**/*.css')].map(&File.method(:basename))
+      end
+    end
+
+    attr_reader :config
+
+    def initialize(config)
+      @config = config
+    end
+
+    def assets
+      Assets.new(config.root)
+    end
   end
 end

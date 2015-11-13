@@ -2,6 +2,8 @@ module Blog
   class Application < Rodakase::Application
     plugin :halt, :symbol_matchers
 
+    plugin :assets, css: resolve(:page).assets.stylesheets
+
     def current_user
       env['blog.current_user']
     end

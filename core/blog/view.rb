@@ -4,9 +4,11 @@ require 'rodakase/view'
 require 'blog/page'
 
 module Blog
+  Container.register(:page, Page.new(Container.config))
+
   class View < Rodakase::View::Layout
     setting :root, Container.root.join('templates')
-    setting :scope, Blog::Page.new
+    setting :scope, Container[:page]
     setting :engine, :slim
     setting :name, 'app'
 

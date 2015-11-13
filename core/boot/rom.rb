@@ -2,10 +2,8 @@ require 'rom'
 require 'rom-repository'
 
 Blog::Container.namespace('persistence') do |container|
-  container.register('setup') do
-    ROM.use(:auto_registration)
-    ROM.setup(:sql, container.config.app.database_url)
-  end
+  ROM.use(:auto_registration)
+  ROM.setup(:sql, container.config.app.database_url)
 
   container.register('rom') do
     if ROM.container

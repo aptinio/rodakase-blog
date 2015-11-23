@@ -1,10 +1,10 @@
 GIT
   remote: git://github.com/rom-rb/rom-mapper.git
-  revision: e07b7f5a89f0b57fcfe076f45ed729dec9e626ff
+  revision: 9bc5e0a26a65f5b396670f9450bf80c8f5766fbb
   branch: master
   specs:
     rom-mapper (0.3.0.beta1)
-      equalizer (~> 0.0, >= 0.0.10)
+      dry-equalizer (~> 0.2)
       rom-support (~> 1.0.0.beta1)
 
 GIT
@@ -20,35 +20,37 @@ GIT
 
 GIT
   remote: git://github.com/rom-rb/rom-sql.git
-  revision: 0a17586961eb2d02d74e4b34d31f64ce3bf99d66
+  revision: f3e806154c70fe16e2033b3eb056d71f8b9cf5eb
   branch: master
   specs:
     rom-sql (0.7.0.beta1)
-      equalizer (~> 0.0, >= 0.0.9)
+      dry-equalizer (~> 0.2)
       rom (~> 1.0.0.beta1)
       sequel (~> 4.18)
 
 GIT
   remote: git://github.com/rom-rb/rom-support.git
-  revision: f232fa7f43d623e286a5096c6aedad6ecf53c609
+  revision: 3cc2abdd515447c79011d9d051e4f816f05bc431
   branch: master
   specs:
     rom-support (1.0.0.beta1)
+      dry-equalizer (~> 0.2)
+      transproc (~> 0.4.0)
       wisper (~> 1.6, >= 1.6.0)
 
 GIT
   remote: git://github.com/rom-rb/rom.git
-  revision: 82a438f8427991af38ec9e9e516ff627068969cc
+  revision: d4faae7f890743283e4c87872a64626864be6c79
   branch: master
   specs:
     rom (1.0.0.beta1)
-      equalizer (~> 0.0, >= 0.0.9)
+      dry-equalizer (~> 0.2)
       rom-mapper (~> 0.3.0.beta1)
       rom-support (~> 1.0.0.beta1)
 
 GIT
   remote: git://github.com/solnic/rodakase.git
-  revision: 4980cf0645baa971e0a1e36cae163b7f9da4a5f7
+  revision: 13ea92a2ac9e1726468496354747510ebeb952b4
   branch: master
   specs:
     rodakase (0.0.1)
@@ -79,7 +81,10 @@ GEM
       adamantium (~> 0.2)
       equalizer (~> 0.0.11)
     bcrypt (3.1.10)
+    bcrypt (3.1.10-java)
     bcrypt-ruby (3.1.5)
+      bcrypt (>= 3.1.3)
+    bcrypt-ruby (3.1.5-java)
       bcrypt (>= 3.1.3)
     byebug (8.2.0)
     capybara (2.5.0)
@@ -101,9 +106,10 @@ GEM
       dry-container (~> 0.2)
       inflecto (~> 0.0.0, >= 0.0.2)
       kleisli (~> 0.2)
-    dry-equalizer (0.1.0)
+    dry-equalizer (0.2.0)
     dry-pipeline (0.0.1)
     equalizer (0.0.11)
+    ffi (1.9.10-java)
     ice_nine (0.11.1)
     inflecto (0.0.2)
     kleisli (0.2.6)
@@ -114,14 +120,22 @@ GEM
     mini_portile (0.6.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    nokogiri (1.6.6.2-java)
     pg (0.18.3)
+    pg_jruby (0.17.1-java)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry (0.10.3-java)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+      spoon (~> 0.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rake (10.4.2)
     roda (2.7.0)
       rack
     rspec (3.4.0)
@@ -142,8 +156,11 @@ GEM
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
     slop (3.6.0)
+    spoon (0.0.4)
+      ffi
     temple (0.7.6)
     thread_safe (0.3.5)
+    thread_safe (0.3.5-java)
     tilt (2.0.1)
     transflow (0.3.0)
       dry-pipeline
@@ -154,6 +171,7 @@ GEM
       nokogiri (~> 1.3)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES
@@ -163,8 +181,10 @@ DEPENDENCIES
   database_cleaner
   dry-data
   pg
+  pg_jruby
   pry
   rack-test
+  rake
   rodakase!
   rom!
   rom-mapper!

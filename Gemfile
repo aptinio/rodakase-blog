@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rake'
 gem 'rodakase', github: 'solnic/rodakase', branch: 'master'
 
 gem 'bcrypt-ruby'
@@ -8,7 +9,8 @@ gem 'dry-data'
 gem 'slim'
 
 group :rom do
-  gem 'pg'
+  gem 'pg', platforms: [:mri, :rbx]
+  gem 'pg_jruby', platforms: [:jruby]
   gem 'transproc', github: 'solnic/transproc', branch: 'master'
   gem 'rom', github: 'rom-rb/rom', branch: 'master'
   gem 'rom-repository', github: 'rom-rb/rom-repository', branch: 'master'
@@ -18,7 +20,7 @@ group :rom do
 end
 
 group :test do
-  gem 'byebug'
+  gem 'byebug', platform: :mri
   gem 'rack-test'
   gem 'rspec'
   gem 'database_cleaner'

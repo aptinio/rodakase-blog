@@ -2,18 +2,18 @@ require 'rom'
 require 'rom-repository'
 
 Blog::Container.namespace('persistence') do |container|
-  ROM.use(:auto_registration)
-  ROM.setup(:sql, container.config.app.database_url)
+  config = ROM::Configuration.new(:sql, container.config.app.database_url)
 
-  %w(relations commands).each do |type|
-    container.require("lib/persistence/#{type}/**/*.rb")
-  end
+  container.register('config', config)
 
-  container.register('rom', ROM.finalize.container)
+  container.require('core/container/persistence')
 
   container.auto_register!('lib/persistence/repositories') do |repo|
     -> { repo.new(container['persistence.rom']) }
   end
 
-  container.require('core/container/persistence')
+  container.finalize(:rom) do
+    config.auto_registration(container.root.join('lib/persistence'))
+    container.register('rom', ROM.create_container(config))
+  end
 end

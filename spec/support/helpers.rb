@@ -1,5 +1,3 @@
-require 'boot/rom'
-
 module Helpers
   module_function
 
@@ -16,6 +14,6 @@ module Helpers
   end
 
   def db_conn
-    container['persistence.rom'].gateways[:default].connection
+    container['persistence.config'].gateways[:default].connection
   end
 end

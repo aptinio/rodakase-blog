@@ -13,6 +13,6 @@ require 'rom/sql/rake_task'
 
 namespace :db do
   task :setup do
-    Blog::Container.boot!(:rom)
+    Blog::Container.boot(:rom)
   end
 end

@@ -14,6 +14,6 @@ Blog::Container.namespace('persistence') do |container|
 
   container.finalize(:rom) do
     config.auto_registration(container.root.join('lib/persistence'))
-    container.register('rom', ROM.create_container(config))
+    container.register('rom', ROM.container(config))
   end
 end

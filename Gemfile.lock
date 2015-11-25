@@ -1,6 +1,16 @@
 GIT
+  remote: git://github.com/dryrb/dry-validation.git
+  revision: 4e3e917eae2809a650886509887fb900f83a4ebc
+  branch: master
+  specs:
+    dry-validation (0.1.0)
+      dry-configurable (~> 0.1)
+      dry-container (~> 0.2, >= 0.2.6)
+      dry-equalizer (~> 0.2)
+
+GIT
   remote: git://github.com/rom-rb/rom-mapper.git
-  revision: 9bc5e0a26a65f5b396670f9450bf80c8f5766fbb
+  revision: 5da914e10b2a13bb551aa76c45f26d27c76d9d72
   branch: master
   specs:
     rom-mapper (0.3.0.beta1)
@@ -20,7 +30,7 @@ GIT
 
 GIT
   remote: git://github.com/rom-rb/rom-sql.git
-  revision: f83859bab1fed472e3c4abb89f30ed63800b6f7b
+  revision: cdeb9072fb28555faace97b9ed63b9b0eb26726f
   branch: master
   specs:
     rom-sql (0.7.0.beta1)
@@ -30,7 +40,7 @@ GIT
 
 GIT
   remote: git://github.com/rom-rb/rom-support.git
-  revision: 3cc2abdd515447c79011d9d051e4f816f05bc431
+  revision: 66d9f4f21a937b2298d9709753fde011ab2e5923
   branch: master
   specs:
     rom-support (1.0.0.beta1)
@@ -40,7 +50,7 @@ GIT
 
 GIT
   remote: git://github.com/rom-rb/rom.git
-  revision: 724b448d6fda987553b586658bfd1c9bff3c62ba
+  revision: dc1d7c4fb799d7da1e6e96921762feaa528d09a3
   branch: master
   specs:
     rom (1.0.0.beta1)
@@ -64,7 +74,7 @@ GIT
 
 GIT
   remote: git://github.com/solnic/transproc.git
-  revision: 86c8b3af719fc0358dc253615b3aa10f604e19bd
+  revision: ef7cbef5d22fffd53beadf5c28abdb4975a02c45
   branch: master
   specs:
     transproc (0.4.0)
@@ -99,7 +109,7 @@ GEM
     dry-auto_inject (0.1.0)
     dry-configurable (0.1.2)
       thread_safe
-    dry-container (0.2.5)
+    dry-container (0.2.6)
       dry-configurable (= 0.1.2)
       thread_safe
     dry-data (0.0.1)
@@ -180,6 +190,7 @@ DEPENDENCIES
   capybara
   database_cleaner
   dry-data
+  dry-validation!
   pg
   pg_jruby
   pry

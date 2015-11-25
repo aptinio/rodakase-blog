@@ -8,6 +8,8 @@ gem 'pry'
 gem 'dry-data'
 gem 'slim'
 
+gem 'dry-validation', github: 'dryrb/dry-validation', branch: 'master'
+
 group :rom do
   gem 'pg', platforms: [:mri, :rbx]
   gem 'pg_jruby', platforms: [:jruby]

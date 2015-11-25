@@ -17,4 +17,8 @@ RSpec.describe Admin::CreateUser do
     expect(user.email).to eql(input[:email])
     expect(user.encrypted_password).to eql('foo-encrypted')
   end
+
+  it 'raises error when params are not valid' do
+    expect { create_user.(name: '') }.to raise_error(ArgumentError)
+  end
 end

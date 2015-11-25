@@ -4,14 +4,24 @@ require 'transproc'
 
 module Admin
   class CreateUser
-    include Blog::Import('admin.encrypt_password', 'persistence.persist_user')
+    include Blog::Import(
+      'admin.encrypt_password',
+      'admin.validation.user_schema',
+      'persistence.persist_user'
+    )
 
     extend Transproc::Registry
 
     import Transproc::HashTransformations
 
     def call(params)
-      Entities::User.new(persist_user.(prepare_attributes(params)))
+      errors = user_schema.messages(params)
+
+      if errors.any?
+        raise ArgumentError, 'user params are not valid'
+      else
+        Entities::User.new(persist_user.(prepare_attributes(params)))
+      end
     end
 
     def prepare_attributes(params)

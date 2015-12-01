@@ -1,11 +1,12 @@
 GIT
   remote: git://github.com/dryrb/dry-validation.git
-  revision: 4e3e917eae2809a650886509887fb900f83a4ebc
+  revision: cb895f62ba6c8c6c0aea6ca3e99a146e2a9a3efc
   branch: master
   specs:
-    dry-validation (0.1.0)
+    dry-validation (0.2.0)
       dry-configurable (~> 0.1)
       dry-container (~> 0.2, >= 0.2.6)
+      dry-data (~> 0.2, >= 0.2.1)
       dry-equalizer (~> 0.2)
 
 GIT
@@ -19,7 +20,7 @@ GIT
 
 GIT
   remote: git://github.com/rom-rb/rom-repository.git
-  revision: 306bcc46dbd07e1332bc7236372f81bab3f1dfa5
+  revision: 3942a6fa8a086010ed46d87ee1c3b81bac5827cb
   branch: master
   specs:
     rom-repository (0.2.0.beta1)
@@ -50,27 +51,28 @@ GIT
 
 GIT
   remote: git://github.com/rom-rb/rom.git
-  revision: dc1d7c4fb799d7da1e6e96921762feaa528d09a3
+  revision: 3116c004725ae4fb125a769d512376805b47efa0
   branch: master
   specs:
-    rom (1.0.0.beta1)
+    rom (1.0.0.beta2)
       dry-equalizer (~> 0.2)
       rom-mapper (~> 0.3.0.beta1)
       rom-support (~> 1.0.0.beta1)
 
 GIT
   remote: git://github.com/solnic/rodakase.git
-  revision: 13ea92a2ac9e1726468496354747510ebeb952b4
+  revision: c4f484e895d4650d5be975c20d41f265494062d9
   branch: master
   specs:
     rodakase (0.0.1)
-      dry-auto_inject
-      dry-container
-      dry-equalizer
-      inflecto
-      roda
-      tilt
-      transflow
+      dry-auto_inject (~> 0.1)
+      dry-configurable (~> 0.1)
+      dry-container (~> 0.2)
+      dry-equalizer (~> 0.2)
+      inflecto (~> 0)
+      roda (~> 2.7)
+      tilt (~> 2.0)
+      transflow (~> 0.3)
 
 GIT
   remote: git://github.com/solnic/transproc.git
@@ -96,7 +98,7 @@ GEM
       bcrypt (>= 3.1.3)
     bcrypt-ruby (3.1.5-java)
       bcrypt (>= 3.1.3)
-    byebug (8.2.0)
+    byebug (8.2.1)
     capybara (2.5.0)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -112,7 +114,7 @@ GEM
     dry-container (0.2.6)
       dry-configurable (= 0.1.2)
       thread_safe
-    dry-data (0.0.1)
+    dry-data (0.2.1)
       dry-container (~> 0.2)
       inflecto (~> 0.0.0, >= 0.0.2)
       kleisli (~> 0.2)
@@ -126,12 +128,14 @@ GEM
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
     method_source (0.8.2)
-    mime-types (2.6.2)
-    mini_portile (0.6.2)
-    nokogiri (1.6.6.2)
-      mini_portile (~> 0.6.0)
-    nokogiri (1.6.6.2-java)
-    pg (0.18.3)
+    mime-types (3.0)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2015.1120)
+    mini_portile2 (2.0.0)
+    nokogiri (1.6.7)
+      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.6.7-java)
+    pg (0.18.4)
     pg_jruby (0.17.1-java)
     pry (0.10.3)
       coderay (~> 1.1.0)
@@ -146,13 +150,13 @@ GEM
     rack-test (0.6.3)
       rack (>= 1.0)
     rake (10.4.2)
-    roda (2.7.0)
+    roda (2.8.0)
       rack
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
       rspec-mocks (~> 3.4.0)
-    rspec-core (3.4.0)
+    rspec-core (3.4.1)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -160,7 +164,7 @@ GEM
     rspec-mocks (3.4.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
-    rspec-support (3.4.0)
+    rspec-support (3.4.1)
     sequel (4.28.0)
     slim (3.0.6)
       temple (~> 0.7.3)

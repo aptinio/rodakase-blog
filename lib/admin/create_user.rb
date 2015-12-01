@@ -10,27 +10,18 @@ module Admin
       'persistence.persist_user'
     )
 
-    extend Transproc::Registry
-
-    import Transproc::HashTransformations
-
     def call(params)
-      errors = user_schema.messages(params)
+      result = user_schema.(params)
 
-      if errors.any?
+      if result.errors.any?
         raise ArgumentError, 'user params are not valid'
       else
-        Entities::User.new(persist_user.(prepare_attributes(params)))
+        Entities::User.new(persist_user.(prepare_attributes(result.params)))
       end
     end
 
     def prepare_attributes(params)
-      password = params.fetch(:password)
-      transformer[params].merge(encrypted_password: encrypt_password.(password))
-    end
-
-    def transformer
-      self.class[:accept_keys, [:name, :email]]
+      params.merge(encrypted_password: encrypt_password.(params[:password]))
     end
   end
 end

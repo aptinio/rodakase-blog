@@ -4,22 +4,17 @@ require 'transproc'
 
 module Admin
   class UpdatePost
-    include Blog::Import('persistence.update_post')
-
-    extend Transproc::Registry
-
-    import Transproc::HashTransformations
+    include Blog::Import(
+      'persistence.update_post',
+      'admin.validation.post_form_schema'
+    )
 
     def call(id, params)
-      Entities::Post.new(update_post.by_id(id).(prepare_attributes(params)))
-    end
+      result = post_form_schema.(params)
 
-    def prepare_attributes(params)
-      transformer[params]
-    end
-
-    def transformer
-      self.class[:symbolize_keys] >> self.class[:accept_keys, [:title, :body]]
+      if result.errors.none?
+        Entities::Post.new(update_post.by_id(id).(result.params))
+      end
     end
   end
 end

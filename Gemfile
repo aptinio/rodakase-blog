@@ -9,6 +9,7 @@ gem 'dry-data'
 gem 'slim'
 
 gem 'dry-validation', github: 'dryrb/dry-validation', branch: 'master'
+gem 'dry-component', github: 'dryrb/dry-component', branch: 'master'
 
 group :rom do
   gem 'pg', platforms: [:mri, :rbx]

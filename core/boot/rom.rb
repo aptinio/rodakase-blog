@@ -2,7 +2,7 @@ require 'rom'
 require 'rom-repository'
 
 Blog::Container.namespace('persistence') do |container|
-  config = ROM::Configuration.new(:sql, container.config.app.database_url)
+  config = ROM::Configuration.new(:sql, container.options.database_url)
 
   container.register('config', config)
 

@@ -1,9 +1,20 @@
 GIT
-  remote: git://github.com/dryrb/dry-validation.git
-  revision: cb895f62ba6c8c6c0aea6ca3e99a146e2a9a3efc
+  remote: git://github.com/dryrb/dry-component.git
+  revision: fd364a8825f83955cd2b21e40e8513e96692874e
   branch: master
   specs:
-    dry-validation (0.2.0)
+    dry-component (0.0.2)
+      dry-auto_inject (~> 0.1)
+      dry-configurable (~> 0.1)
+      dry-container (~> 0.2, >= 0.2.7)
+      inflecto (>= 0.0.2)
+
+GIT
+  remote: git://github.com/dryrb/dry-validation.git
+  revision: 873902daf8b86396936b493654786e956146d449
+  branch: master
+  specs:
+    dry-validation (0.4.0)
       dry-configurable (~> 0.1)
       dry-container (~> 0.2, >= 0.2.6)
       dry-data (~> 0.2, >= 0.2.1)
@@ -11,7 +22,7 @@ GIT
 
 GIT
   remote: git://github.com/rom-rb/rom-mapper.git
-  revision: 5da914e10b2a13bb551aa76c45f26d27c76d9d72
+  revision: 23bcecc96d20c06d46028e59a9853d898a5e14df
   branch: master
   specs:
     rom-mapper (0.3.0.beta1)
@@ -61,13 +72,12 @@ GIT
 
 GIT
   remote: git://github.com/solnic/rodakase.git
-  revision: c4f484e895d4650d5be975c20d41f265494062d9
+  revision: 65f733856c89c45f0bbb1157c3e342d467c5911c
   branch: master
   specs:
     rodakase (0.0.1)
-      dry-auto_inject (~> 0.1)
+      dry-component (~> 0)
       dry-configurable (~> 0.1)
-      dry-container (~> 0.2)
       dry-equalizer (~> 0.2)
       inflecto (~> 0)
       roda (~> 2.7)
@@ -111,20 +121,23 @@ GEM
     dry-auto_inject (0.1.0)
     dry-configurable (0.1.2)
       thread_safe
-    dry-container (0.2.6)
+    dry-container (0.2.7)
       dry-configurable (= 0.1.2)
       thread_safe
-    dry-data (0.2.1)
+    dry-data (0.4.1)
+      dry-configurable (~> 0.1)
       dry-container (~> 0.2)
+      dry-equalizer (~> 0.2)
       inflecto (~> 0.0.0, >= 0.0.2)
       kleisli (~> 0.2)
+      thread_safe (~> 0.3)
     dry-equalizer (0.2.0)
     dry-pipeline (0.0.1)
     equalizer (0.0.11)
     ffi (1.9.10-java)
     ice_nine (0.11.1)
     inflecto (0.0.2)
-    kleisli (0.2.6)
+    kleisli (0.2.7)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
     method_source (0.8.2)
@@ -132,9 +145,9 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2015.1120)
     mini_portile2 (2.0.0)
-    nokogiri (1.6.7)
+    nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
-    nokogiri (1.6.7-java)
+    nokogiri (1.6.7.1-java)
     pg (0.18.4)
     pg_jruby (0.17.1-java)
     pry (0.10.3)
@@ -150,7 +163,7 @@ GEM
     rack-test (0.6.3)
       rack (>= 1.0)
     rake (10.4.2)
-    roda (2.8.0)
+    roda (2.9.0)
       rack
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
@@ -165,7 +178,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
-    sequel (4.28.0)
+    sequel (4.29.0)
     slim (3.0.6)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
@@ -193,6 +206,7 @@ DEPENDENCIES
   byebug
   capybara
   database_cleaner
+  dry-component!
   dry-data
   dry-validation!
   pg

@@ -14,7 +14,7 @@ module Blog
 
     route('admin') do |r|
       r.on('sign_in') do
-        r.is(to: 'ui.admin.sign_in')
+        r.is(to: 'views.admin.sign_in')
       end
 
       r.on('sessions') do
@@ -39,7 +39,7 @@ module Blog
 
           r.on('posts') do
             r.on('new') do
-              r.is(to: 'ui.admin.new_post')
+              r.is(to: 'views.admin.new_post')
             end
 
             r.on(:id) do |id|
@@ -51,7 +51,7 @@ module Blog
               end
 
               r.on('edit') do
-                r.is(to: 'ui.admin.edit_post', call_with: [id: id])
+                r.is(to: 'views.admin.edit_post', call_with: [id: id])
               end
             end
 
@@ -63,7 +63,7 @@ module Blog
             end
           end
 
-          r.is(to: 'ui.admin.index')
+          r.is(to: 'views.admin.index')
         end
       end
     end

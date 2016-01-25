@@ -1,7 +1,7 @@
 require 'blog/import'
 require 'blog/view'
 
-module Ui
+module Views
   module Admin
     class EditPost < Blog::View::Admin
       include Blog::Import('persistence.repositories.posts')
